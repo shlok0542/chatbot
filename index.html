@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Chatbot</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
+      <a href="/LoginPage.html"><i class="fa-solid fa-circle-user"></i></a>
+      <div id="sidebar" class="sidebar">
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Setting</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="main-container">
+      <div>
+        <h1>Lets Talk With Your Personal AI Chatbot</h1></div>
+      <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+          <div id="chatbot-message">
+            <i class="fa-solid fa-robot"></i>
+            <p>Hello friend! How can I help You?</p>
+          </div>
+        </div>
+        <div class="input-box">
+          <i
+            class="fa-solid fa-microphone"
+            id="speech"
+            onclick="startSpeechRecognition()"
+          ></i>
+          <input type="text" id="user-input" placeholder="Type a message..." />
+          <button id="SendBtn" onclick="StartResponse()">Send</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+            <li>
+              <a href="https://instagram.com" target="_blank">Instagram</a>
+            </li>
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Powered by Shlok Maurya All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
