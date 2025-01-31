@@ -212,7 +212,7 @@
         height:9vh;
     } 
     footer {
-        height: 30vh;
+        height: 25vh;
         margin-top:10px;
         background-color:rgba(0, 0, 0, 0.619);
         color: #fff;
@@ -232,6 +232,7 @@
     .footer-social h4{
         text-align: center;
         color: black;
+        margin-bottom: 10px;
     }
     .footer-social ul li {
         list-style: none;
@@ -244,6 +245,11 @@
     .footer-social ul li a:hover{
         border-bottom: 1px solid cyan;
     } 
+    .footer-bottom p{
+        font-size: 10px;
+        margin-top:25px;
+        text-align: center;
+    }
 /* for mobile */
 @media only screen and (max-width:600px){
     body{
