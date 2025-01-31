@@ -129,7 +129,7 @@
     
     }
     #user-message p{
-        background-color: rgba(16, 16, 15, 0.273);
+        background-color: rgba(16, 16, 15, 0.099);
         border-radius: 15px;
         padding: 5px;
     }
@@ -152,7 +152,7 @@
         margin-right:10px; 
     }
     #chatbot-message p{
-        background-color:rgba(16, 16, 15, 0.273);
+        background-color:rgba(16, 16, 15, 0.099);
         border-radius:15px;
         padding:5px;
     }
@@ -211,6 +211,9 @@
         cursor: pointer;
         height:9vh;
     } 
+    button:hover {
+        background-color: #4cae4c;
+    }
     footer {
         height: 25vh;
         margin-top:10px;
@@ -231,7 +234,7 @@
     }
     .footer-social h4{
         text-align: center;
-        color: black;
+        color:white;
         margin-bottom: 10px;
     }
     .footer-social ul li {
