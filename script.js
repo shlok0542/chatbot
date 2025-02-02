@@ -4,7 +4,20 @@ let userInput = document.getElementById("user-input");
 let flag = false;
 const api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC3p7ZKcIm6kut9MNrIJWaNYPb1zlke5Ls`;
 
-let div_number = 0;
+const hours = new Date().getHours();
+let greeting;
+if (hours < 12) {
+    greeting = `Good morning!`;
+} else if (hours < 18) {
+    greeting = "Good afternoon!";
+} else {
+    greeting = "Good evening!";
+}
+let welcomemessage =`${greeting} How can I help you today?`
+document.querySelectorAll(".text-box")[0].innerHTML = welcomemessage;
+speak(welcomemessage);
+
+let div_number = 1;
 
 sendbtn.addEventListener("click", () => {
   // calling startresponse function
@@ -162,6 +175,6 @@ function speak(message) {
   text_content.pitch = 1;
   text_content.volume = 1;
   text_content.rate = 1;
-  text_content.lang = "hi-GB";
+  text_content.lang = "en-GB";
   window.speechSynthesis.speak(text_content);
 }
