@@ -1,12 +1,14 @@
 let sendbtn = document.getElementById("SendBtn");
 let chatBox = document.getElementById("chat-box");
 let userInput = document.getElementById("user-input");
+let flag = false;
 const api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC3p7ZKcIm6kut9MNrIJWaNYPb1zlke5Ls`;
 
 let div_number = 0;
+
 sendbtn.addEventListener("click", () => {
   // calling startresponse function
-  StartResponse(div_numbernumber); //  when send button click
+  StartResponse(div_number); //  when send button click
   div_number++;
 });
 
@@ -16,12 +18,13 @@ async function StartResponse(tag_number) {
   let userquery = userInput.value;
   userInput.value = "";
   if (userquery == "") return;
-  let userMessage = `<div id="user-message"><p>${userquery}</p><i class="fa-sharp-duotone fa-solid fa-circle-user"></i></div>`;
+  let userMessage = `<div id="user-message"><p>${userquery}</p></div>`;
   chatBox.innerHTML += userMessage;
-  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p>Typing....</p></div>`;
+  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p>Thinking....</p></div>`;
   chatBox.innerHTML += loadingMessage;
   chatBox.scrollTop = chatBox.scrollHeight;
-  let TEXT = await GenerateResponse(userquery);
+
+  let TEXT = await GenerateResponse(userquery);   // calling GenerateResponse function and store response in TEXT
   document.getElementById("loading").remove();
   let botMessage = `<div id="chatbot-message"> 
                             <i class="fa-solid fa-robot"></i><p class=text-box>
@@ -31,7 +34,7 @@ async function StartResponse(tag_number) {
   typeWriter(TEXT, text_box[tag_number]); //calling typeWriter function
   chatBox.scrollTop = chatBox.scrollHeight;
   if (flag === true) {
-    speak(text); // calling speak function when speak mode is on
+    speak(TEXT); 
   }
 }
 //fetch in data from gemini API
@@ -78,7 +81,6 @@ let sidebar_option = document.getElementById("option");
 let speakmode_toggle = document.getElementById("speakmode");
 let speakcheckbox = document.getElementById("speakmode-checkbox");
 let checkbox = document.getElementById("checkbox");
-let flag = false;
 let ischecked = false;
 
 checkbox.addEventListener("click", () => {
@@ -154,9 +156,9 @@ function startSpeechRecognition() {
     };
   }
 }
-function speak(text) {
+function speak(message) {
   // definition of speak function
-  let text_content = new SpeechSynthesisUtterance(text);
+  let text_content = new SpeechSynthesisUtterance(message);
   text_content.pitch = 1;
   text_content.volume = 1;
   text_content.rate = 1;
