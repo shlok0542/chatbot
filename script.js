@@ -15,7 +15,6 @@ if (hours < 12) {
 }
 let welcomemessage =`${greeting} How can I help you today?`
 document.querySelectorAll(".text-box")[0].innerHTML = welcomemessage;
-speak(welcomemessage);
 
 let div_number = 1;
 
