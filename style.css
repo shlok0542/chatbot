@@ -176,12 +176,12 @@ header i {
 #chatbot-message i{
     color: rgb(224, 25, 105);
     margin-right:10px;
-    padding-top:5px;
+    padding-top:2px;
     font-size:20px;
 }
 #chatbot-message p{
          padding:7px;
-         border-radius: 10px;
+         border-radius:10px;
          background-color:black;
          color: white;
          width: 100%;
