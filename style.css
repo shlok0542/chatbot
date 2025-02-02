@@ -290,10 +290,14 @@ footer {
         height: 60vh;
     }
     .input-box {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap:2px;
+        width: 100%;
+    }
+    .input-box input{
+        width: 80%;
     }
     button {
-        width: 100%;
+        width: 20%;
     }
 }

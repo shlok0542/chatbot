@@ -16,7 +16,6 @@ if (hours < 12) {
     greeting = "Good evening!";
 }
 let welcomemessage =`${greeting} How can I help you today?`
-speak(welcomemessage);
 document.querySelectorAll(".text-box")[0].innerHTML = welcomemessage;
 }
 window.onload=greeting;
