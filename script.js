@@ -2,9 +2,11 @@ let sendbtn = document.getElementById("SendBtn");
 let chatBox = document.getElementById("chat-box");
 let userInput = document.getElementById("user-input");
 let flag = false;
+let div_number =1;
 const api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC3p7ZKcIm6kut9MNrIJWaNYPb1zlke5Ls`;
 
-const hours = new Date().getHours();
+function greeting(){
+  const hours = new Date().getHours();
 let greeting;
 if (hours < 12) {
     greeting = `Good morning!`;
@@ -16,8 +18,8 @@ if (hours < 12) {
 let welcomemessage =`${greeting} How can I help you today?`
 speak(welcomemessage);
 document.querySelectorAll(".text-box")[0].innerHTML = welcomemessage;
-
-let div_number = 1;
+}
+greeting();
 
 sendbtn.addEventListener("click", () => {
   // calling startresponse function
@@ -33,18 +35,19 @@ async function StartResponse(tag_number) {
   if (userquery == "") return;
   let userMessage = `<div id="user-message"><p>${userquery}</p></div>`;
   chatBox.innerHTML += userMessage;
-  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p>Thinking....</p></div>`;
+  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p><pre>Thinking....</pre></p></div>`;
   chatBox.innerHTML += loadingMessage;
   chatBox.scrollTop = chatBox.scrollHeight;
 
-  let TEXT = await GenerateResponse(userquery);   // calling GenerateResponse function and store response in TEXT
+  let TEXT = await GenerateResponse(userquery);   // calling GenerateResponse function 
+  let cleandText=TEXT.replace(/\*\*\*/g,'').replace(/\`\`\`/g,'').replace(/\#\#\#/g,'').replace(/\*/g,'').replace(/\-/g,'').replace(/\-\-/g,'').replace(/\*\*/g,'');
   document.getElementById("loading").remove();
   let botMessage = `<div id="chatbot-message"> 
-                            <i class="fa-solid fa-robot"></i><p class=text-box>
+                            <i class="fa-solid fa-robot"></i><p><pre class=text-box></pre>
                         </p></div>`;
   chatBox.innerHTML += botMessage;
   let text_box = document.querySelectorAll(".text-box");
-  typeWriter(TEXT, text_box[tag_number]); //calling typeWriter function
+  typeWriter(cleandText, text_box[tag_number]); //calling typeWriter function
   chatBox.scrollTop = chatBox.scrollHeight;
   if (flag === true) {
     speak(TEXT); 

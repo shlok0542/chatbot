@@ -124,11 +124,10 @@ header i {
     overflow: hidden;
     margin: 20px auto;
 }
-
 .chat-box {
     flex: 1;
     padding: 10px;
-    overflow-y: auto;
+    overflow-y:auto;
     border-bottom: 1px solid #ddd;
     font-size: 12px;
 }
@@ -144,6 +143,7 @@ header i {
     background-color: #c9c2c2b3;
     padding:7px;
     border-radius: 10px;
+    color: black;
 }
 #loading{
     display: flex;
@@ -153,20 +153,21 @@ header i {
     padding: 10px;
     margin: 10px;
 }
-#loading p{
-    background-color: #c9c2c2b3;
+#loading pre{
+    background-color:black;
     padding:7px;
     border-radius: 10px;
+    color: cyan;
 }
 #loading i{
     color: rgb(224, 25, 105);
     margin-right:10px;
-    
+    padding: 10px;
+    font-size:20px; 
 }
 #chatbot-message{
     display: flex;
     justify-content:left;
-    align-items: center;
     border-radius:10px;
     padding: 10px;
     margin: 10px;
@@ -175,11 +176,15 @@ header i {
 #chatbot-message i{
     color: rgb(224, 25, 105);
     margin-right:10px;
+    padding: 10px;
+    font-size:20px;
 }
-#chatbot-message p{
-         background-color: #c9c2c2b3;
+#chatbot-message pre{
          padding:7px;
          border-radius: 10px;
+         background-color:black;
+        color: white;
+        overflow-y:scroll;
 }
 .input-box {
     display: flex;
@@ -188,7 +193,6 @@ header i {
     align-items: center;
     justify-content: space-between;
 }
-
 .input-box i{
     color: rgb(224, 25, 105);
     font-size: 20px;
