@@ -19,7 +19,7 @@ let welcomemessage =`${greeting} How can I help you today?`
 speak(welcomemessage);
 document.querySelectorAll(".text-box")[0].innerHTML = welcomemessage;
 }
-greeting();
+window.onload=greeting;
 
 sendbtn.addEventListener("click", () => {
   // calling startresponse function
@@ -35,26 +35,27 @@ async function StartResponse(tag_number) {
   if (userquery == "") return;
   let userMessage = `<div id="user-message"><p>${userquery}</p></div>`;
   chatBox.innerHTML += userMessage;
-  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p><pre>Thinking....</pre></p></div>`;
+  let loadingMessage = `<div id="loading"><i class="fa-solid fa-robot"></i><p class=text-box>Thinking....</p></div>`;
   chatBox.innerHTML += loadingMessage;
   chatBox.scrollTop = chatBox.scrollHeight;
 
   let TEXT = await GenerateResponse(userquery);   // calling GenerateResponse function 
-  let cleandText=TEXT.replace(/\*\*\*/g,'').replace(/\`\`\`/g,'').replace(/\#\#\#/g,'').replace(/\*/g,'').replace(/\-/g,'').replace(/\-\-/g,'').replace(/\*\*/g,'');
+  let cleandText=TEXT.replace(/\*\*\*/g,'').replace(/\`\`\`/g,'').replace(/\#\#\#/g,'').replace(/\*/g,'').replace(/\-\-/g,'').replace(/\*\*/g,'');
   document.getElementById("loading").remove();
   let botMessage = `<div id="chatbot-message"> 
-                            <i class="fa-solid fa-robot"></i><p><pre class=text-box></pre>
+                            <i class="fa-solid fa-robot"></i><p class=text-box>
                         </p></div>`;
   chatBox.innerHTML += botMessage;
   let text_box = document.querySelectorAll(".text-box");
   typeWriter(cleandText, text_box[tag_number]); //calling typeWriter function
-  chatBox.scrollTop = chatBox.scrollHeight;
+  setTimeout(() => {
+    chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: "smooth" });
+  }, 100);
   if (flag === true) {
     speak(TEXT); 
   }
 }
 //fetch in data from gemini API
-
 async function GenerateResponse(message) {
   let RequestOption = {
     method: "Post",
@@ -128,7 +129,7 @@ function typeWriter(text, element) {
     if (index < text.length) {
       element.innerHTML += text.charAt(index);
       index++;
-      setTimeout(type, 30); // Adjust speed
+      setTimeout(type,10); // Adjust speed
     }
   }
   type();
