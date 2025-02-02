@@ -20,12 +20,16 @@
       <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
       <a href="LoginPage.html"><i class="fa-solid fa-circle-user"></i></a>
       <div id="sidebar" class="sidebar">
-        <ul>
+        <ul id="option">
           <li><a href="#">Profile</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Setting</a></li>
+          <li id="history">History</li>
+          <li id="speakmode">SpeakMode</li>
+          <li><a href="#">Help Me</a></li>
         </ul>
+        <ul id="speakmode-checkbox">
+          <li> <label>SpeakMode</label>
+            <input type="checkbox" id="checkbox"></li>
+      </ul>
       </div>
     </header>
     <div class="main-container">
@@ -45,7 +49,7 @@
             onclick="startSpeechRecognition()"
           ></i>
           <input type="text" id="user-input" placeholder="Type a message..." />
-          <button id="SendBtn" onclick="StartResponse()">Send</button>
+          <button id="SendBtn">Send</button>
         </div>
       </div>
     </div>
