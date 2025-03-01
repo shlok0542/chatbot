@@ -239,7 +239,8 @@ footer {
     font-size: 15px;
   }
   .chat-container {
-    max-height:80vh auto;
+    max-height:80vh;
+    background-color: rgb(33, 33, 33);
   }
   .main-container {
     height:100%;
