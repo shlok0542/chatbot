@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -18,56 +17,43 @@
   <body>
     <header>
       <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
-      <a href="LoginPage.html"><i class="fa-solid fa-circle-user"></i></a>
+      <div class="login-section">
+        <div class="login"><a href="#">Log in</a></div>
+        <div class="signup"><a href="#">Sign up</a></div>
+      </div>
       <div id="sidebar" class="sidebar">
         <ul id="option">
-          <li><a href="#">Profile</a></li>
-          <li id="history">History</li>
-          <li id="speakmode">SpeakMode</li>
-          <li><a href="#">Help Me</a></li>
+          <li><a href="#">New Chat</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li id="history">About</li>
+          <li><a href="#">Setting</a></li>
         </ul>
-        <ul id="speakmode-checkbox">
-          <li> <label>SpeakMode</label>
-            <input type="checkbox" id="checkbox"></li>
-      </ul>
       </div>
     </header>
     <div class="main-container">
-      <div>
-        <h1>Hello! I’m here to help. What can I do for you today?</h1></div>
+      <h1 class="chatbot-label">What can I help with?</h1>
       <div class="chat-container">
         <div class="chat-box" id="chat-box">
-          <div id="chatbot-message"> 
-            <i class="fa-solid fa-robot"></i><p class=text-box>
-        </p></div>
+          <div id="chatbot-message">
+            <pre class="text-box"></pre>
+          </div>
         </div>
         <div class="input-box">
+          <input type="text" id="user-input" placeholder="Ask anything" />
           <i
             class="fa-solid fa-microphone"
             id="speech"
             onclick="startSpeechRecognition()"
           ></i>
-          <input type="text" id="user-input" placeholder="Type a message..." />
-          <button id="SendBtn">Send</button>
+          <div id="SendBtn">
+            <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     </div>
     <footer>
-      <div class="footer-container">
-        <div class="footer-social">
-          <h4>Follow Us</h4>
-          <ul>
-            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-            <li>
-              <a href="https://instagram.com" target="_blank">Instagram</a>
-            </li>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-          </ul>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Powered by Shlok Maurya All rights reserved.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Powered by Shlok Maurya All rights reserved.</p>
       </div>
     </footer>
     <script src="script.js" async defer></script>
