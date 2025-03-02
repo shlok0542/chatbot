@@ -1,15 +1,17 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const errorMessage = document.getElementById('error-message');
-
-    // Simple validation (you can replace this with actual authentication logic)
-    if (username === 'admin' && password === 'password') {
-        alert('Login successful!');
-        // Redirect to another page or perform other actions
+function validateLogin() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+    
+    if (email === "" || password === "") {
+        errorMessage.textContent = "Please fill in all fields.";
     } else {
-        errorMessage.textContent = 'Invalid username or password.';
+        errorMessage.textContent = "";
+        alert("Login Successful");
+        window.location.href = "/Project-1/chatbot/index.html";
     }
-});
+}
+
+function toggleSignup() {
+    window.location.href = "/Project-1/chatbot/signup.html";
+}

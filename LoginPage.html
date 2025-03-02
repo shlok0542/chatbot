@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="LoginPage.css">
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
 </head>
 <body>
-    <header>
-        <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
-        <div class="login-section">
-          <div class="login"><a href="/Project-1/chatbot/LoginPage.html">Log in</a></div>
-          <div class="signup"><a href="/Project-1/chatbot/signup.html">Sign up</a></div>
-        </div>
-        <div id="sidebar" class="sidebar">
-          <ul id="option">
-            <li><a href="#">New Chat</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li id="history">About</li>
-            <li><a href="#">Setting</a></li>
-          </ul>
-        </div>
-      </header>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" required placeholder="Enter username">
+    <div class="container">
+        <div class="login-box">
+            <h2>Login to Your Account</h2>
+            <p>Login using social networks</p>
+            <div class="social-buttons">
+              <i class="fa-brands fa-facebook" style="color:#74C0FC;"></i>
+              <i class="fa-brands fa-google" style="color:rgba(227, 49, 49, 0.88);"></i>
+              <i class="fa-brands fa-linkedin-in" style="color: #74C0FC;"></i>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required placeholder="Enter Password">
-            </div>
-            <button type="submit">Login</button>
-            <p>Click here if you don't have accout,<a href="signup.html">SignUp</a></p>
-            <p id="error-message" class="error-message"></p>
-        </form>
+            <div class="or-box">
+              <div class="or"></div>
+              <div>OR</div>
+              <div class="or"></div>
+            </div> 
+            <div class="input-box">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <a href="#">Forget Password?</a>
+            <button class="sign-in" onclick="validateLogin()">Sign In</button>
+            <p class="error-message" id="error-message"></p>
+        </div>
+        </div>
+        <div class="signup-box">
+            <h2>AI Chatbot</h2>
+            <p>We're just a message away if you need anything</p>
+            <button class="sign-up" onclick="toggleSignup()">Sign Up</button>
+        </div>
     </div>
-    <script src="LoginPage.js"></script>
+  <script src="LoginPage.js"></script> 
 </body>
 </html>
+

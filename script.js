@@ -26,11 +26,13 @@ async function StartResponse(tag_number) {
   chatBox.scrollTop = chatBox.scrollHeight;
   // calling GenerateResponse function
   let TEXT = await GenerateResponse(userquery);
-  let cleandText = TEXT.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>").replace(
-    /\*/g,
-    ""
-  );
-  // remove loading message
+  let cleandText = TEXT
+  .replace(/\*\*/g,"") 
+  .replace(/\*/g,"") 
+  .replace(/\`\`\`/g,"")
+  .replace(/\`/g,"")
+  .replace(/\</g,"&lt;")
+  .replace(/\>/g,"&gt;");
   document.getElementById("loading").remove();
   let botMessage = `<div id="chatbot-message"><pre class=text-box></pre></div>`;
   chatBox.innerHTML += botMessage;
@@ -95,7 +97,7 @@ function typeWriter(text, element) {
   let index = 0;
   function textwriter() {
     if (index < text.length) {
-      element.innerHTML = text.substring(0, index + 1);
+      element.innerHTML=text.substring(0, index + 1);
       index++;
       setTimeout(textwriter, 1); // Adjust speed
     }

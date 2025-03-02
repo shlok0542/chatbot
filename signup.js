@@ -1,21 +1,27 @@
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
 
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const messageDiv = document.getElementById('message');
+let signup_btn = document.getElementById("sign-up");
+let signin_btn=document.getElementById("sign-in");
 
-    // Basic validation
-    if (username === '' || email === '' || password === '') {
-        messageDiv.textContent = 'All fields are required!';
-        return;
-    }
-
-    // Simulate a successful sign-up
-    messageDiv.textContent = 'Sign up successful! Welcome, ' + username + '!';
-    messageDiv.style.color = 'green';
-
-    // Clear the form
-    document.getElementById('signupForm').reset();
+// on click of the signup button, the user is redirected to the main page
+signup_btn.addEventListener("click",() => {
+let fullname = document.getElementById("fullname").value;
+let username = document.getElementById("username").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+let errorMessage = document.getElementById("error-message");
+    console.log("clicked");
+  if(email === "" || password === "" || fullname === "" || username === ""){
+    errorMessage.textContent = "Please fill in all fields.";
+  }else {
+    errorMessage.textContent = "";
+    alert("Login Successful");
+    window.location.href = "/Project-1/chatbot/index.html";
+  }
 });
+// on click of the signin button, the user is redirected to the signi page
+signin_btn.addEventListener("click",() => {
+    toggleSignup();
+});
+function toggleSignup() {
+  window.location.href = "/Project-1/chatbot/LoginPage.html";
+}
