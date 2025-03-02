@@ -8,10 +8,10 @@ function validateLogin() {
     } else {
         errorMessage.textContent = "";
         alert("Login Successful");
-        window.location.href = "/Project-1/chatbot/index.html";
+        window.location.href = "index.html";
     }
 }
 
 function toggleSignup() {
-    window.location.href = "/Project-1/chatbot/signup.html";
+    window.location.href = "signup.html";
 }

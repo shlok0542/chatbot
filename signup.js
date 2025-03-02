@@ -15,7 +15,7 @@ let errorMessage = document.getElementById("error-message");
   }else {
     errorMessage.textContent = "";
     alert("Login Successful");
-    window.location.href = "/Project-1/chatbot/index.html";
+    window.location.href = "index.html";
   }
 });
 // on click of the signin button, the user is redirected to the signi page
@@ -23,5 +23,5 @@ signin_btn.addEventListener("click",() => {
     toggleSignup();
 });
 function toggleSignup() {
-  window.location.href = "/Project-1/chatbot/LoginPage.html";
+  window.location.href = "LoginPage.html";
 }
