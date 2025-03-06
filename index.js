@@ -89,7 +89,7 @@ async function GenerateResponse(message) {
     let text_result = data.candidates[0].content.parts[0].text;
     return text_result;
   } catch (error) {
-    console.log("Response not Fetch");
+    error(error);
   }
 }
 
@@ -141,7 +141,6 @@ function startSpeechRecognition() {
     });
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
-      console.log("Result received: " + transcript);
       userInput.value = transcript;
     };
   }
