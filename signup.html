@@ -4,32 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="signUp.css">
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer">
 </head>
 <body>
-    <div class="container">
-        <div class="signin-box">
-            <h2>AI Chatbot</h2>
-            <p>We're just a message away if you need anything</p>
-        </div>
-        <div class="signup-box">
-            <h2>Create Account</h2>
-            <div class="input-box">
-            <input type="text" placeholder="Full Name" id="fullname">
-            <input type="text" placeholder="Username" id="username">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
-            <input type="password" placeholder="Confirm password">
-            <button id="sign-up">Sign Up</button>
-            <p class="error-message" id="error-message"></p>
-        </div>
-        </div>
+    <div id="container">
+        <!-- From Uiverse.io by Yaya12085 --> 
+<form class="form">
+    <p class="title">Sign Up</p>
+    <p class="message">Signup now and get full access to our app. </p>
+        <div class="flex">
+        <label>
+            <input required="" placeholder="" type="text" class="input">
+            <span>Firstname</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" class="input">
+            <span>Lastname</span>
+        </label>
+    </div>  
+            
+    <label>
+        <input required="" placeholder="" type="email" class="input">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input required="" placeholder="" type="password" class="input">
+        <span>Password</span>
+    </label>
+    <label>
+        <input required="" placeholder="" type="password" class="input">
+        <span>Confirm password</span>
+    </label>
+    <button class="submit">Submit</button>
+    <p class="signin">Already have an acount ? <a href="signIn.html">Signin</a> </p>
+</form>
     </div>
-  <script src="signup.js"></script> 
+  <script src="signUp.js"></script> 
 </body>
 </html>
 

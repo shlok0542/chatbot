@@ -5,7 +5,7 @@
     <title>AI Chatbot</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="index.css"/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,25 +16,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   </head>
   <body>
+      </div>
     <header>
-      <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
+      <div>
+        <i class="fa-duotone fa-solid fa-bars" id="menuToggle"></i>
+        <i class="fa-sharp-duotone fa-solid fa-xmark" id="crossToggle"></i>
+      </div>
       <div class="login-section">
-        <div class="login"><a href="LoginPage.html">Log in</a></div>
-        <div class="signup"><a href="signup.html">Sign up</a></div>
+        <div class="login"><a href="signIn.html">Sign In</a></div>
+        <div class="signup"><a href="signUp.html">Sign up</a></div>
       </div>
       <div id="sidebar" class="sidebar">
         <ul id="option">
-          <li><a href="#">New Chat</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li id="history">About</li>
-          <li><a href="#">Setting</a></li>
+           <li><i class="fa-solid fa-plus"></i><div>New Chat</div></li>
+          <li><i class="fa-solid fa-clock-rotate-left"></i><div>Dashboard</div></li>
+          <li><i class="fa-solid fa-gear"></i><div>Settings</div></li>
+          <li><i class="fa-solid fa-right-from-bracket"></i><div>Log Out</div></li>
         </ul>
       </div>
     </header>
     <div class="main-container">
       <h1 class="chatbot-label">What can I help with?</h1>
       <div class="chat-container">
-        <div class="chat-box" id="chat-box">
+        <div class="chat-box" id="chat-box">  
           <div id="chatbot-message">
             <pre class="text-box"></pre>
           </div>
@@ -46,18 +50,27 @@
             id="speech"
             onclick="startSpeechRecognition()"
           ></i>
-          <div id="SendBtn">
-            <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-          </div>
+          <!-- From Uiverse.io by eirikvold --> 
+<button id="SendBtn">
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+      </svg>
+    </div>
+  </div>
+  <span>Send</span>
+</button>
         </div>
-      </div>
+      </div> 
     </div>
     <footer>
       <div class="footer-bottom">
         <p>&copy; 2025 Powered by Shlok Maurya All rights reserved.</p>
       </div>
     </footer>
-    <script src="script.js"  defer></script>
+    <script src="index.js"  defer></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   </body>
 </html>
