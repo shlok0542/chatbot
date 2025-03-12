@@ -6,18 +6,16 @@ let div_number = 1;
 const API_KEY = "AIzaSyCRXiZg2zxASXRh1UgLyfNKCECPUl_UNa0";
 const api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent?key=${API_KEY}`;
 
-    sendbtn.addEventListener("click", () => {
-      if (userInput.value.trim() != "") {
-        document.querySelector(".chatbot-label").style.display = "none";
-        // calling startresponse function
-        StartResponse(div_number); //  when send button click
-        div_number++;
-      }
-      else{
-        alert("Please enter your message");
-      }
-      }
-    );
+sendbtn.addEventListener("click", () => {
+  if (userInput.value.trim() != "") {
+    document.querySelector(".chatbot-label").style.display = "none";
+    // calling startresponse function
+    StartResponse(div_number); //  when send button click
+    div_number++;
+  } else {
+    alert("Please enter your message");
+  }
+});
 
 // Api integration and display response
 
@@ -42,13 +40,12 @@ async function StartResponse(tag_number) {
   scrollToBottom();
   // calling GenerateResponse function
   let TEXT = await GenerateResponse(userquery);
-  let cleandText = TEXT
-  .replace(/\*\*/g,"") 
-  .replace(/\*/g,"") 
-  .replace(/\`\`\`/g,"")
-  .replace(/\`/g,"")
-  .replace(/\</g,"&lt;")
-  .replace(/\>/g,"&gt;");
+  let cleandText = TEXT.replace(/\*\*/g,"")
+    .replace(/\*/g, "")
+    .replace(/\`\`\`/g, "")
+    .replace(/\`/g, "")
+    .replace(/\</g, "&lt;")
+    .replace(/\>/g, "&gt;");
   document.getElementById("loading").remove();
   let botMessage = `<div id="chatbot-message"><pre class=text-box></pre></div>`;
   chatBox.innerHTML += botMessage;
@@ -96,19 +93,19 @@ async function GenerateResponse(message) {
 //End of Api integration and display response
 
 // side bar hide and show functionality
-let menutoggle=document.getElementById("menuToggle");
-let crosstoggle=document.getElementById("crossToggle");
+let menutoggle = document.getElementById("menuToggle");
+let crosstoggle = document.getElementById("crossToggle");
 const sidebar = document.getElementById("sidebar");
-menutoggle.addEventListener("click",()=>{
-   sidebar.style.left = "0px"; // Show the sidebar
-    menutoggle.style.display="none";
-    crosstoggle.style.display="block";
-})
-crosstoggle.addEventListener("click",()=>{
+menutoggle.addEventListener("click", () => {
+  sidebar.style.left = "0px"; // Show the sidebar
+  menutoggle.style.display = "none";
+  crosstoggle.style.display = "block";
+});
+crosstoggle.addEventListener("click", () => {
   sidebar.style.left = "-450px"; // Hide the sidebar
-  crosstoggle.style.display="none";
-  menutoggle.style.display="block";
-})
+  crosstoggle.style.display = "none";
+  menutoggle.style.display = "block";
+});
 //end
 // typewriter function for chatbot
 function typeWriter(text, element) {
@@ -116,7 +113,7 @@ function typeWriter(text, element) {
   let index = 0;
   function textwriter() {
     if (index < text.length) {
-      element.innerHTML=text.substring(0, index + 1);
+      element.innerHTML = text.substring(0, index + 1);
       index++;
       scrollToBottom();
       setTimeout(textwriter, 1); // Adjust speed
@@ -148,6 +145,5 @@ function startSpeechRecognition() {
 
 // Function to scroll to the bottom
 function scrollToBottom() {
-    chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop = chatBox.scrollHeight;
 }
-

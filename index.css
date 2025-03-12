@@ -103,12 +103,18 @@ header .signup:hover {
   margin-left: 20px;
   list-style: none;
 }
+.sidebar ul li a{
+  text-decoration: none;
+  color: white;
+}
 .sidebar ul li i {
   color: white;
    margin-right: 10px;
 }
 .sidebar ul li:hover {
   cursor: pointer;
+  background-color:rgba(128, 128, 128, 0.379);
+  border-radius: 20px;
 }
 
 /* Main Container */
@@ -126,7 +132,9 @@ header .signup:hover {
 }
 .main-container .chatbot-label {
   color: white;
-  font-size:2.3rem;
+  font-size:2rem;
+  position: relative;
+  bottom:12vh;
 }
 /* Chat Container */
 .chat-container {
@@ -275,7 +283,7 @@ header .signup:hover {
   line-height: 1.6;
   word-spacing: 0.5px;
   text-align: left;
-  font-size: 15px;
+  font-size:0.9em;
 }
 .input-box{
   display: flex;
@@ -387,6 +395,7 @@ footer {
     font-size: 25px;
   }
   .chat-container {
+     width: 100%;;
     max-height:80vh;
     background-color: rgb(33, 33, 33);
   }
@@ -408,7 +417,7 @@ footer {
   header i {
     font-size: 35px;
   }
-  .chat-container {
+  .chat-container{
     width:100%;
     max-height:80vh auto;
     padding:10px;

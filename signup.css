@@ -4,23 +4,27 @@
 }
 body{
   height:100vh;
-  width: 100vw;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(33, 33, 33);
 }
+#container{
+  position:fixed;
+  display: flex;
+  justify-self:center;
+}
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: left;
   gap: 10px;
   width:320px;
   background-color: #fff;
   padding:20px;
   border-radius: 20px;
-  position: relative;
 }
-
 .title {
   font-size: 28px;
   color: royalblue;
