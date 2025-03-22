@@ -115,7 +115,6 @@ function typeWriter(text, element) {
     if (index < text.length) {
       element.innerHTML = text.substring(0, index + 1);
       index++;
-      scrollToBottom();
       setTimeout(textwriter, 1); // Adjust speed
     }
   }
@@ -145,5 +144,5 @@ function startSpeechRecognition() {
 
 // Function to scroll to the bottom
 function scrollToBottom() {
-  chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTop =0;
 }
